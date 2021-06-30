@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  signal_0:
+    shm_size: 512m
+    container_name: cts-signal_0
+    image: capturethesignal/cts-base:pybombs-3.7-py2
+    network_mode: host
+    volumes:
+      - ./cts-signal_0/bomb:/bomb
+
+  #signal_1:
+  #  shm_size: 512m
+  #  container_name: cts-signal_1
+  #  image: capturethesignal/cts-base:pybombs-3.7-py2
+  #  network_mode: host
+  #  volumes:
+  #    - ./cts-signal_1/bomb:/bomb
+
+
+  #filler:
+  #  shm_size: 512m
+  #  environment:
+  #    - MIN_PORT=10000
+  #    - MAX_PORT=30000
+  #  container_name: cts-filler
+  #  image: python:slim
+  #  network_mode: host
+  #  volumes:
+  #   - ./cts-filler:/root
+  #  working_dir: /root
+  #  command: ./main.py
